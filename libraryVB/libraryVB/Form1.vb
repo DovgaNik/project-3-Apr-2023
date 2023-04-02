@@ -21,7 +21,6 @@ Public Class Form1
         DataGridView1.Columns.Add("Return date", "Return date")
     End Function
 
-
     Private Sub AddANewBookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddANewBookToolStripMenuItem.Click
         Dim bookname As String = InputBox("Plese, enter the name of the book you want to add: ", "New book").Trim()
         Dim authorname As String = InputBox("Plese, enter the name of the author of the book you want to add: ", "New book").Trim()
@@ -35,14 +34,13 @@ Public Class Form1
     End Sub
 
     Private Sub RemoveABookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveABookToolStripMenuItem.Click
-        'Dim selIndex As Integer
-        'selIndex = CheckedListBox.SelectedIndex
 
-        'If selIndex <> -1 Then
-        '    CheckedListBox.Items.RemoveAt(selIndex)
-        'Else
-        '    MessageBox.Show("You've selected nothing!!!")
-        'End If
+        Dim rowind As Integer = DataGridView1.CurrentCell.RowIndex
+        DataGridView1.Rows.RemoveAt(rowind)
+        For index = rowind To DataGridView1.RowCount - 1
+            DataGridView1.Rows(index).Cells(0).Value = index
+        Next
+
     End Sub
 
     Private Sub CreateANewDatabaseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateANewDatabaseToolStripMenuItem.Click
@@ -75,7 +73,7 @@ Public Class Form1
                 Dim objects As String()
                 objects = objReader.ReadLine().Split("|".ToCharArray)
                 If objects.Count = 5 Then
-                    DataGridView1.Rows.Add(ID, objects(0), objects(1), objects(2), UnixToDateTime(objects(3)), UnixToDateTime(objects(4)))
+                    DataGridView1.Rows.Add(ID, objects(0), objects(1), Convert.ToBoolean(Convert.ToInt16(objects(2))), UnixToDateTime(objects(3)), UnixToDateTime(objects(4)))
                 End If
                 ID += 1
             Loop
@@ -84,7 +82,6 @@ Public Class Form1
         Else
             MessageBox.Show("File " + fileName + " does not exist, plese check again!!!")
         End If
-
     End Sub
     Private Sub ABookIsReturnedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABookIsReturnedToolStripMenuItem.Click
         Dim index As Integer = DataGridView1.CurrentCell.RowIndex
@@ -96,4 +93,9 @@ Public Class Form1
     Private Sub HelppageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelppageToolStripMenuItem.Click
         FormHelp.Show()
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.MultiSelect = False
+    End Sub
+
 End Class

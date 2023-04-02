@@ -93,13 +93,13 @@ Partial Class Form1
         'AddANewBookToolStripMenuItem
         '
         Me.AddANewBookToolStripMenuItem.Name = "AddANewBookToolStripMenuItem"
-        Me.AddANewBookToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.AddANewBookToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.AddANewBookToolStripMenuItem.Text = "Add a new book"
         '
         'RemoveABookToolStripMenuItem
         '
         Me.RemoveABookToolStripMenuItem.Name = "RemoveABookToolStripMenuItem"
-        Me.RemoveABookToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
+        Me.RemoveABookToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.RemoveABookToolStripMenuItem.Text = "Remove a book"
         '
         'ActionsToolStripMenuItem
@@ -137,17 +137,19 @@ Partial Class Form1
         'HelppageToolStripMenuItem
         '
         Me.HelppageToolStripMenuItem.Name = "HelppageToolStripMenuItem"
-        Me.HelppageToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.HelppageToolStripMenuItem.Size = New System.Drawing.Size(124, 26)
         Me.HelppageToolStripMenuItem.Text = "Help"
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(12, 31)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DataGridView1.RowTemplate.Height = 29
         Me.DataGridView1.Size = New System.Drawing.Size(1191, 539)
         Me.DataGridView1.TabIndex = 2
@@ -156,6 +158,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1215, 582)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
