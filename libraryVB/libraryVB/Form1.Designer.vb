@@ -36,7 +36,7 @@ Partial Class Form1
         Me.ABookIsReturnedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InShaAllahToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelppageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +48,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.BooksToolStripMenuItem, Me.ActionsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1215, 28)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -112,33 +112,33 @@ Partial Class Form1
         'ABookIsBorrowedToolStripMenuItem
         '
         Me.ABookIsBorrowedToolStripMenuItem.Name = "ABookIsBorrowedToolStripMenuItem"
-        Me.ABookIsBorrowedToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ABookIsBorrowedToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
         Me.ABookIsBorrowedToolStripMenuItem.Text = "A book is borrowed"
         '
         'ABookIsReturnedToolStripMenuItem
         '
         Me.ABookIsReturnedToolStripMenuItem.Name = "ABookIsReturnedToolStripMenuItem"
-        Me.ABookIsReturnedToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ABookIsReturnedToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
         Me.ABookIsReturnedToolStripMenuItem.Text = "A book is returned"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InShaAllahToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelppageToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(55, 24)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
-        'InShaAllahToolStripMenuItem
+        'HelppageToolStripMenuItem
         '
-        Me.InShaAllahToolStripMenuItem.Name = "InShaAllahToolStripMenuItem"
-        Me.InShaAllahToolStripMenuItem.Size = New System.Drawing.Size(170, 26)
-        Me.InShaAllahToolStripMenuItem.Text = "In Sha Allah"
+        Me.HelppageToolStripMenuItem.Name = "HelppageToolStripMenuItem"
+        Me.HelppageToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.HelppageToolStripMenuItem.Text = "Help"
         '
         'DataGridView1
         '
@@ -149,14 +149,14 @@ Partial Class Form1
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 407)
+        Me.DataGridView1.Size = New System.Drawing.Size(1191, 539)
         Me.DataGridView1.TabIndex = 2
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1215, 582)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -182,7 +182,7 @@ Partial Class Form1
     Friend WithEvents ABookIsBorrowedToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ABookIsReturnedToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InShaAllahToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelppageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridView1 As DataGridView
 End Class

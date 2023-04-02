@@ -21,13 +21,10 @@ Public Class Form1
         DataGridView1.Columns.Add("Return date", "Return date")
     End Function
 
-    Private Sub InShaAllahToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InShaAllahToolStripMenuItem.Click
-        FormHelp.Show()
-    End Sub
 
     Private Sub AddANewBookToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddANewBookToolStripMenuItem.Click
         Dim bookname As String = InputBox("Plese, enter the name of the book you want to add: ", "New book").Trim()
-        Dim authorname As String = InputBox("Plese, enter the name of the auther of the book you want to add: ", "New book").Trim()
+        Dim authorname As String = InputBox("Plese, enter the name of the author of the book you want to add: ", "New book").Trim()
 
         If bookname <> Nothing And authorname <> Nothing Then
             DataGridView1.Rows.Add(DataGridView1.Rows.Count - 1, bookname, authorname, 0, "N/A", "N/A")
@@ -94,5 +91,9 @@ Public Class Form1
         DataGridView1.Rows(index).Cells(3).Value = "No"
         DataGridView1.Rows(index).Cells(4).Value = "N/A"
         DataGridView1.Rows(index).Cells(5).Value = "N/A"
+    End Sub
+
+    Private Sub HelppageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelppageToolStripMenuItem.Click
+        FormHelp.Show()
     End Sub
 End Class

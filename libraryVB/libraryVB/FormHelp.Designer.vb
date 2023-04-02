@@ -23,30 +23,42 @@ Partial Class FormHelp
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(187, 223)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(437, 20)
+        Me.Label1.Size = New System.Drawing.Size(440, 54)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "اللَّهُمَّ مُنْزِلَ اْلِكتَابِ ، سَرِيْعَ الْحِسَابِ ،اِهْزِمِ الإْحْزَابَ ،اللَّ" &
-    "هُمَّ اِهْزِمْهُمْ وَزَلْزِلْهُمْ"
+        Me.Label1.Text = "Made by Nikita Dovhan"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(208, 20)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "dovhan.o.nikita22@stud.rau.ro"
         '
         'FormHelp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(475, 102)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormHelp"
-        Me.Text = "FormHelp"
+        Me.Text = "Help"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
