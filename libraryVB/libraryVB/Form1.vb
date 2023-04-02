@@ -26,7 +26,7 @@ Public Class Form1
         Dim authorname As String = InputBox("Plese, enter the name of the author of the book you want to add: ", "New book").Trim()
 
         If bookname <> Nothing And authorname <> Nothing Then
-            DataGridView1.Rows.Add(DataGridView1.Rows.Count - 1, bookname, authorname, 0, "N/A", "N/A")
+            DataGridView1.Rows.Add(DataGridView1.Rows.Count - 1, bookname, authorname, False, "N/A", "N/A")
         Else
             MessageBox.Show("You did not enter a correct value!!!")
         End If
@@ -85,7 +85,7 @@ Public Class Form1
     End Sub
     Private Sub ABookIsReturnedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABookIsReturnedToolStripMenuItem.Click
         Dim index As Integer = DataGridView1.CurrentCell.RowIndex
-        DataGridView1.Rows(index).Cells(3).Value = "No"
+        DataGridView1.Rows(index).Cells(3).Value = False
         DataGridView1.Rows(index).Cells(4).Value = "N/A"
         DataGridView1.Rows(index).Cells(5).Value = "N/A"
     End Sub
