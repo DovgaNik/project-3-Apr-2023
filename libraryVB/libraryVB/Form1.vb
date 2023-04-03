@@ -136,6 +136,12 @@ Public Class Form1
     End Function
 
     Private Sub ABookIsBorrowedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABookIsBorrowedToolStripMenuItem.Click
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(3).Value = True
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(4).Value = New DateTime().Now
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(5).Value = New DateTime().Now.AddDays(5)
+    End Sub
+
+    Private Sub InfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InfoToolStripMenuItem.Click
 
     End Sub
 End Class
