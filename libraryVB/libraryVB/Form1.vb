@@ -1,6 +1,8 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Form1
+    Dim currentFile As String
     Public Function UnixToDateTime(ByVal strUnixTime As String) As DateTime
 
         Dim nTimestamp As Double = strUnixTime
@@ -9,6 +11,10 @@ Public Class Form1
 
         Return nDateTime
 
+    End Function
+
+    Function DateTimeToUnix(uTime As DateTime)
+        Return (uTime - New DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds
     End Function
 
     Function clearDB()
@@ -26,7 +32,7 @@ Public Class Form1
         Dim authorname As String = InputBox("Plese, enter the name of the author of the book you want to add: ", "New book").Trim()
 
         If bookname <> Nothing And authorname <> Nothing Then
-            DataGridView1.Rows.Add(DataGridView1.Rows.Count - 1, bookname, authorname, False, "N/A", "N/A")
+            DataGridView1.Rows.Add(DataGridView1.Rows.Count - 1, bookname, authorname, False, New DateTime(1970, 1, 1, 0, 0, 0), New DateTime(1970, 1, 1, 0, 0, 0))
         Else
             MessageBox.Show("You did not enter a correct value!!!")
         End If
@@ -63,7 +69,7 @@ Public Class Form1
         End If
 
         If File.Exists(fileName) Then
-
+            currentFile = fileName
             clearDB()
             Dim objReader As New StreamReader(fileName)
             Dim ID As Integer
@@ -78,16 +84,14 @@ Public Class Form1
                 ID += 1
             Loop
 
-
         Else
             MessageBox.Show("File " + fileName + " does not exist, plese check again!!!")
         End If
     End Sub
     Private Sub ABookIsReturnedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABookIsReturnedToolStripMenuItem.Click
-        Dim index As Integer = DataGridView1.CurrentCell.RowIndex
-        DataGridView1.Rows(index).Cells(3).Value = False
-        DataGridView1.Rows(index).Cells(4).Value = "N/A"
-        DataGridView1.Rows(index).Cells(5).Value = "N/A"
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(3).Value = False
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(4).Value = New DateTime(1970, 1, 1, 0, 0, 0)
+        DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(5).Value = New DateTime(1970, 1, 1, 0, 0, 0)
     End Sub
 
     Private Sub HelppageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelppageToolStripMenuItem.Click
@@ -98,4 +102,40 @@ Public Class Form1
         DataGridView1.MultiSelect = False
     End Sub
 
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        save(currentFile)
+    End Sub
+
+    Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
+        saveAs()
+    End Sub
+
+    Function saveAs()
+        Dim svDg As New SaveFileDialog
+
+        svDg.Filter = "Book database file|*.bookdb|All files|*.*"
+        svDg.FilterIndex = 1
+        svDg.DefaultExt = ".bookdb"
+        svDg.AddExtension = True
+
+        If svDg.ShowDialog() = DialogResult.OK Then
+            save(svDg.FileName)
+        End If
+    End Function
+
+    Function save(filename)
+        Try
+            File.Delete(filename)
+        Catch ex As Exception
+            MessageBox.Show("Unable to delete the file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        For index = 0 To DataGridView1.RowCount - 2
+            File.AppendAllText(filename, DataGridView1.Rows(index).Cells(1).Value + "|" + DataGridView1.Rows(index).Cells(2).Value + "|" + Convert.ToInt16(DataGridView1.Rows(index).Cells(3).Value).ToString + "|" + DateTimeToUnix(DataGridView1.Rows(index).Cells(4).Value).ToString + "|" + DateTimeToUnix(DataGridView1.Rows(index).Cells(5).Value).ToString + vbNewLine)
+        Next
+    End Function
+
+    Private Sub ABookIsBorrowedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABookIsBorrowedToolStripMenuItem.Click
+
+    End Sub
 End Class

@@ -25,7 +25,6 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateANewDatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,7 +53,7 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateANewDatabaseToolStripMenuItem, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.OpenToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateANewDatabaseToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.OpenToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
         Me.FileToolStripMenuItem.Text = "File"
@@ -64,12 +63,6 @@ Partial Class Form1
         Me.CreateANewDatabaseToolStripMenuItem.Name = "CreateANewDatabaseToolStripMenuItem"
         Me.CreateANewDatabaseToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.CreateANewDatabaseToolStripMenuItem.Text = "Create a new database"
-        '
-        'SaveToolStripMenuItem
-        '
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
-        Me.SaveToolStripMenuItem.Text = "Save"
         '
         'SaveAsToolStripMenuItem
         '
@@ -93,13 +86,13 @@ Partial Class Form1
         'AddANewBookToolStripMenuItem
         '
         Me.AddANewBookToolStripMenuItem.Name = "AddANewBookToolStripMenuItem"
-        Me.AddANewBookToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.AddANewBookToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
         Me.AddANewBookToolStripMenuItem.Text = "Add a new book"
         '
         'RemoveABookToolStripMenuItem
         '
         Me.RemoveABookToolStripMenuItem.Name = "RemoveABookToolStripMenuItem"
-        Me.RemoveABookToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RemoveABookToolStripMenuItem.Size = New System.Drawing.Size(201, 26)
         Me.RemoveABookToolStripMenuItem.Text = "Remove a book"
         '
         'ActionsToolStripMenuItem
@@ -112,19 +105,19 @@ Partial Class Form1
         'ABookIsBorrowedToolStripMenuItem
         '
         Me.ABookIsBorrowedToolStripMenuItem.Name = "ABookIsBorrowedToolStripMenuItem"
-        Me.ABookIsBorrowedToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.ABookIsBorrowedToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ABookIsBorrowedToolStripMenuItem.Text = "A book is borrowed"
         '
         'ABookIsReturnedToolStripMenuItem
         '
         Me.ABookIsReturnedToolStripMenuItem.Name = "ABookIsReturnedToolStripMenuItem"
-        Me.ABookIsReturnedToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.ABookIsReturnedToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ABookIsReturnedToolStripMenuItem.Text = "A book is returned"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.InfoToolStripMenuItem.Text = "Info"
         '
         'HelpToolStripMenuItem
@@ -175,7 +168,6 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreateANewDatabaseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BooksToolStripMenuItem As ToolStripMenuItem
