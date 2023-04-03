@@ -142,6 +142,25 @@ Public Class Form1
     End Sub
 
     Private Sub InfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InfoToolStripMenuItem.Click
-
+        Dim selIndex As Integer = DataGridView1.CurrentCell.RowIndex
+        Dim info As New Form2
+        info.selIndex = selIndex
+        info.TextBox1.Text = DataGridView1.Rows(selIndex).Cells(1).Value
+        info.TextBox2.Text = DataGridView1.Rows(selIndex).Cells(2).Value
+        info.CheckBox1.Checked = DataGridView1.Rows(selIndex).Cells(3).Value
+        If info.CheckBox1.Checked Then
+            info.DateTimePicker1.Value = DataGridView1.Rows(selIndex).Cells(4).Value
+            info.DateTimePicker2.Value = DataGridView1.Rows(selIndex).Cells(5).Value
+        End If
+        info.Show()
     End Sub
+
+    Function Savebookinfo(ind As Integer, name As String, author As String, checked As Boolean, borr As DateTime, ret As DateTime)
+        DataGridView1.Rows(ind).Cells(1).Value = name
+        DataGridView1.Rows(ind).Cells(2).Value = author
+        DataGridView1.Rows(ind).Cells(3).Value = checked
+        DataGridView1.Rows(ind).Cells(4).Value = borr
+        DataGridView1.Rows(ind).Cells(5).Value = ret
+    End Function
+
 End Class
